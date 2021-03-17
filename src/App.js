@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Weather from './Weather'
+import './App.css'
 
 function App() {
+  const cities = [
+    {
+      city_name: 'Tokyo',
+      color_name: 'blue',
+    },
+    {
+      city_name: 'London',
+      color_name: 'yellow',
+    },
+    {
+      city_name: 'Paris',
+      color_name: 'green',
+    },
+    {
+      city_name: 'Los Angeles',
+      color_name: 'red',
+    },
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='min-h-screen flex justify-center items-center flex-wrap'>
+      {cities.map((city, index) => (
+        <Weather key={index} city_name={city.city_name} color_name={city.color_name} />
+      ))}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
